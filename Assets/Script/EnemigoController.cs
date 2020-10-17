@@ -40,8 +40,11 @@ public class EnemigoController : MonoBehaviour
     void Update()
     {
         distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
+        
 
-        switch (comportamiento)
+
+
+     /*   switch (comportamiento)
         {
             case tipoComportamientoEnemigo.pasivo:
                 //Deplazarce caminando
@@ -86,6 +89,9 @@ public class EnemigoController : MonoBehaviour
 
                 break;
         }
-
+        */
     }
+
+    
+
 }

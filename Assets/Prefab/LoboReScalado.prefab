@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 7609395841131036357}
   m_Layer: 0
   m_Name: LoboReScalado
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,10 +266,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914580db223be5c4ba1932ba4cb6f3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limiteCaminataIzq: 0
-  limiteCaminataDer: 0
   velocidad: 15
-  direccion: 1
+  comportamiento: 0
+  entradaZonaPersecucion: 60
+  salidaZonaPersecucion: 600
+  distanciaAtaque: 5
+  distanciaConPlayer: 0
+  player: {fileID: 0}
 --- !u!58 &7609395841131036357
 CircleCollider2D:
   m_ObjectHideFlags: 0
