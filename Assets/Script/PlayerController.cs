@@ -12,13 +12,15 @@ public class PlayerController : MonoBehaviour
     public bool enPiso;
     SpriteRenderer sprite;
     bool ataque;
+    BoxCollider2D ataqueCollider;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-
+        ataqueCollider = GetComponentInChildren<BoxCollider2D>();
+        ataqueCollider.enabled = false;
     }
 
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))
         {
             anim.SetTrigger("Ataque");
+            ataqueCollider.enabled = true;
         }
         //Animacion de bloqueo
         if (Input.GetKeyDown(KeyCode.K))
@@ -47,6 +50,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 
     private void FixedUpdate()
     {
