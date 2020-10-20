@@ -43,12 +43,15 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Ataque");
             ataqueCollider.enabled = true;
         }
+        else
+        {
+            ataqueCollider.enabled = false;
+        }
         //Animacion de bloqueo
         if (Input.GetKeyDown(KeyCode.K))
         {
             anim.SetTrigger("Bloquear");
         }
-
     }
 
 
