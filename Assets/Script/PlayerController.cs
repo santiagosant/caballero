@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     SpriteRenderer sprite;
     bool ataque;
     BoxCollider2D ataqueCollider;
+    public float tiempo;
 
     void Start()
     {
@@ -21,11 +22,12 @@ public class PlayerController : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
         ataqueCollider = GetComponentInChildren<BoxCollider2D>();
         ataqueCollider.enabled = false;
+        tiempo = 0f;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         //Comprueba si esta en el piso para saltar
         enPiso = Physics2D.OverlapCircle(refPie.position,1f,1<<8);
         //Boolean para animator
@@ -42,8 +44,14 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Ataque");
             ataqueCollider.enabled = true;
+            tiempo = 3f;
         }
-        else
+        //Contador para desactivar el trigger del ataque 
+        if (tiempo > 0)
+        {
+            tiempo -= 0.1f;
+        }
+        if (tiempo <= 0)
         {
             ataqueCollider.enabled = false;
         }

@@ -2055,6 +2055,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0.021112496
       objectReference: {fileID: 0}
+    - target: {fileID: 4060679581953331207, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
+      propertyPath: tiempo
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4060679581953331256, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
       propertyPath: m_Name
       value: Caballero
