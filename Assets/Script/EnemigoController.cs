@@ -22,6 +22,8 @@ public class EnemigoController : MonoBehaviour
     Animator anim;
 
     SpriteRenderer sprite;
+    public ParticleSystem particulasDeDaño;
+    bool daños;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +34,7 @@ public class EnemigoController : MonoBehaviour
         Destroy(GetComponent<CircleCollider2D>());
         transform.GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        particulasDeDaño = GetComponent<ParticleSystem>();
         //porque hice el sprite mirando a la izquierda
         sprite.flipX = true;
     }
@@ -41,7 +44,7 @@ public class EnemigoController : MonoBehaviour
     {
         distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
         
-
+        
 
 
      /*   switch (comportamiento)
@@ -94,7 +97,8 @@ public class EnemigoController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        particulasDeDaño.Play();
     }
 
 
