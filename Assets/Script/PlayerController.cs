@@ -78,8 +78,8 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("AbsMovX",Mathf.Abs(movX));
         rb2d.velocity = new Vector2(velX * movX, rb2d.velocity.y);
 
-        if (movX < 0) sprite.flipX = true;
-        if (movX > 0) sprite.flipX = false;
+        if (movX < 0) sprite.transform.localScale = new Vector3(-0.3f,0.3f,0);
+        if (movX > 0) sprite.transform.localScale = new Vector3(0.3f, 0.3f, 0);
 
     }
 }

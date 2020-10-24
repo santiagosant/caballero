@@ -20,6 +20,7 @@ public class EnemigoController : MonoBehaviour
     public float distanciaConPlayer;
     public Transform player;
     Animator anim;
+    int vida;
 
     SpriteRenderer sprite;
     public ParticleSystem particulasDeDaño;
@@ -37,67 +38,78 @@ public class EnemigoController : MonoBehaviour
         particulasDeDaño = GetComponent<ParticleSystem>();
         //porque hice el sprite mirando a la izquierda
         sprite.flipX = true;
+        vida = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
-        
-        
 
-
-     /*   switch (comportamiento)
+        if (Input.GetKeyDown(KeyCode.I))
         {
-            case tipoComportamientoEnemigo.pasivo:
-                //Deplazarce caminando
-                rb2d.velocity = new Vector2(velocidad * direccion, rb2d.velocity.y);
-                //Gira el sprite para c
-                if (transform.position.x < limiteCaminataIzq)
-                {
-                    sprite.flipX = true;
-                    direccion = 1;
-                }
-                if (transform.position.x > limiteCaminataDer)
-                {
-                    sprite.flipX = false;
-                    direccion = -1;
-                }
-                anim.speed = 1f; 
-                //Empieza a perseguir
-                if (distanciaConPlayer > entradaZonaPersecucion) comportamiento = tipoComportamientoEnemigo.persecucion;
-                break;
-
-            case tipoComportamientoEnemigo.persecucion:
-                //Deplazarce caminando
-                rb2d.velocity = new Vector2(velocidad * 1.1f , rb2d.velocity.y);
-                //Gira el sprite para c
-                if (player.position.x > transform.position.x)
-                {
-                    sprite.flipX = true;
-                    direccion = 1;
-                }
-                if (player.position.x < transform.position.x)
-                {
-                    sprite.flipX = false;
-                    direccion = -1;
-                }
-                //Velocidad de animacion
-                anim.speed = 1.1f;
-                //volver a pasivo NO VUELVE A PASIVO (tampoco es que altere al gameplay planeado que no lo haga)
-                if (distanciaConPlayer > salidaZonaPersecucion) comportamiento = tipoComportamientoEnemigo.pasivo;
-                break;
-
-            case tipoComportamientoEnemigo.ataque:
-
-                break;
+            particulasDeDaño.Play();
         }
-        */
+        //distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
+
+
+
+
+        /*   switch (comportamiento)
+           {
+               case tipoComportamientoEnemigo.pasivo:
+                   //Deplazarce caminando
+                   rb2d.velocity = new Vector2(velocidad * direccion, rb2d.velocity.y);
+                   //Gira el sprite para c
+                   if (transform.position.x < limiteCaminataIzq)
+                   {
+                       sprite.flipX = true;
+                       direccion = 1;
+                   }
+                   if (transform.position.x > limiteCaminataDer)
+                   {
+                       sprite.flipX = false;
+                       direccion = -1;
+                   }
+                   anim.speed = 1f; 
+                   //Empieza a perseguir
+                   if (distanciaConPlayer > entradaZonaPersecucion) comportamiento = tipoComportamientoEnemigo.persecucion;
+                   break;
+
+               case tipoComportamientoEnemigo.persecucion:
+                   //Deplazarce caminando
+                   rb2d.velocity = new Vector2(velocidad * 1.1f , rb2d.velocity.y);
+                   //Gira el sprite para c
+                   if (player.position.x > transform.position.x)
+                   {
+                       sprite.flipX = true;
+                       direccion = 1;
+                   }
+                   if (player.position.x < transform.position.x)
+                   {
+                       sprite.flipX = false;
+                       direccion = -1;
+                   }
+                   //Velocidad de animacion
+                   anim.speed = 1.1f;
+                   //volver a pasivo NO VUELVE A PASIVO (tampoco es que altere al gameplay planeado que no lo haga)
+                   if (distanciaConPlayer > salidaZonaPersecucion) comportamiento = tipoComportamientoEnemigo.pasivo;
+                   break;
+
+               case tipoComportamientoEnemigo.ataque:
+
+                   break;
+           }
+           */
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //gameObject.SetActive(false);
+        vida -= 1;
+        if (vida == 0)
+        {
+            gameObject.SetActive(false);
+        }
         particulasDeDaño.Play();
     }
 
