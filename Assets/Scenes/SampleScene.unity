@@ -636,11 +636,6 @@ Transform:
   m_Father: {fileID: 1258369585}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &628015115 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4060679581374929449, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
-  m_PrefabInstance: {fileID: 4060679581968458087}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &653591254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1113,6 +1108,11 @@ Transform:
   m_Father: {fileID: 1258369585}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!198 &1209251897 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1992922371388031409, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+  m_PrefabInstance: {fileID: 7109771141564414892}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1248665238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,11 +1432,6 @@ Transform:
   m_Father: {fileID: 1258369585}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!198 &1584118973 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-  m_PrefabInstance: {fileID: 7109771141564414892}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767728218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2064,10 @@ PrefabInstance:
       propertyPath: tiempo
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4060679581953331207, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
+      propertyPath: "particulasDeDa\xF1o"
+      value: 
+      objectReference: {fileID: 1209251897}
     - target: {fileID: 4060679581953331256, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
       propertyPath: m_Name
       value: Caballero
@@ -2128,7 +2127,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 113169841791135863, guid: 72505b993c1df014a92d40770d89b269, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.87
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: 113169841791135863, guid: 72505b993c1df014a92d40770d89b269, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2174,69 +2173,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoboReScalado
       objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721756, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 6.552824
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721756, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721756, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721756, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+    - target: {fileID: 1992922371388031408, guid: 72505b993c1df014a92d40770d89b269, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -3.38
       objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Position.x
-      value: -0.000000013864273
+    - target: {fileID: 1992922371388031408, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Position.y
-      value: -4.0389255e-13
+    - target: {fileID: 1992922371388031409, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+      propertyPath: lengthInSec
+      value: 0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Position.z
-      value: -0.00000002659333
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Rotation.x
-      value: 0.0014939934
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Rotation.y
-      value: 101.19392
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Rotation.z
-      value: 0.0048568402
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Scale.y
-      value: 0.30285296
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: ShapeModule.m_Scale.x
-      value: 0.18045828
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: TriggerModule.enabled
+    - target: {fileID: 1992922371388031409, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+      propertyPath: stopAction
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: TriggerModule.collisionShape0
-      value: 
-      objectReference: {fileID: 628015115}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: TriggerModule.inside
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1241606300330721759, guid: 72505b993c1df014a92d40770d89b269, type: 3}
-      propertyPath: TriggerModule.enter
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3161324848500752456, guid: 72505b993c1df014a92d40770d89b269, type: 3}
       propertyPath: player
@@ -2245,6 +2196,6 @@ PrefabInstance:
     - target: {fileID: 3161324848500752456, guid: 72505b993c1df014a92d40770d89b269, type: 3}
       propertyPath: "particulasDeDa\xF1o"
       value: 
-      objectReference: {fileID: 1584118973}
+      objectReference: {fileID: 1209251897}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72505b993c1df014a92d40770d89b269, type: 3}

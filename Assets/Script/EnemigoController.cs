@@ -19,12 +19,12 @@ public class EnemigoController : MonoBehaviour
 
     public float distanciaConPlayer;
     public Transform player;
-    Animator anim;
-    int vida;
+    public int vida;
+    bool sangrar;
 
     SpriteRenderer sprite;
     public ParticleSystem particulasDeDaño;
-    bool daños;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -44,11 +44,7 @@ public class EnemigoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            particulasDeDaño.Play();
-        }
+       
         //distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
 
 
@@ -104,13 +100,11 @@ public class EnemigoController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //gameObject.SetActive(false);
         vida -= 1;
         if (vida == 0)
         {
             gameObject.SetActive(false);
         }
-        particulasDeDaño.Play();
     }
 
 
