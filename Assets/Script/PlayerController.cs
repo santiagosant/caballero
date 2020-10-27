@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     bool ataque;
     BoxCollider2D ataqueCollider;
     float tiempo;
-    public ParticleSystem particulasDeDaño;
 
 
     void Start()
@@ -30,11 +29,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            particulasDeDaño.Play();
-        }
-
         //Comprueba si esta en el piso para saltar
         enPiso = Physics2D.OverlapCircle(refPie.position,1f,1<<8);
         //Boolean para animator

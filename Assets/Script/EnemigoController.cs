@@ -9,7 +9,7 @@ public class EnemigoController : MonoBehaviour
     float limiteCaminataIzq;
     float limiteCaminataDer;
     public float velocidad;
-    float direccion = 1f;
+    //float direccion = 1f;
     public enum tipoComportamientoEnemigo { pasivo, persecucion, ataque };
     public tipoComportamientoEnemigo comportamiento = tipoComportamientoEnemigo.pasivo;
 
@@ -20,7 +20,6 @@ public class EnemigoController : MonoBehaviour
     public float distanciaConPlayer;
     public Transform player;
     public int vida;
-    bool sangrar;
 
     SpriteRenderer sprite;
     public ParticleSystem particulasDeDaño;
@@ -35,7 +34,6 @@ public class EnemigoController : MonoBehaviour
         Destroy(GetComponent<CircleCollider2D>());
         transform.GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        particulasDeDaño = GetComponent<ParticleSystem>();
         //porque hice el sprite mirando a la izquierda
         sprite.flipX = true;
         vida = 3;
@@ -105,6 +103,7 @@ public class EnemigoController : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        particulasDeDaño.Play();
     }
 
 
