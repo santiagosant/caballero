@@ -9,12 +9,10 @@ public class EnemigoController : MonoBehaviour
     float limiteCaminataIzq;
     float limiteCaminataDer;
     public float velocidad;
-    //float direccion = 1f;
-    public enum tipoComportamientoEnemigo { pasivo, persecucion, ataque };
+    float direccion = 1f;
+    public enum tipoComportamientoEnemigo { pasivo, ataque };
     public tipoComportamientoEnemigo comportamiento = tipoComportamientoEnemigo.pasivo;
-
-    public float entradaZonaPersecucion = 60f;
-    public float salidaZonaPersecucion = 600f;
+    Animator anim;
     public float distanciaAtaque = 5f;
 
     public float distanciaConPlayer;
@@ -32,7 +30,7 @@ public class EnemigoController : MonoBehaviour
         limiteCaminataIzq = transform.position.x - GetComponent<CircleCollider2D>().radius;
         limiteCaminataDer = transform.position.x + GetComponent<CircleCollider2D>().radius;
         Destroy(GetComponent<CircleCollider2D>());
-        transform.GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         //porque hice el sprite mirando a la izquierda
         sprite.flipX = true;
@@ -42,13 +40,11 @@ public class EnemigoController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        //distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
+
+        distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
 
 
-
-
-        /*   switch (comportamiento)
+           switch (comportamiento)
            {
                case tipoComportamientoEnemigo.pasivo:
                    //Deplazarce caminando
@@ -64,36 +60,27 @@ public class EnemigoController : MonoBehaviour
                        sprite.flipX = false;
                        direccion = -1;
                    }
-                   anim.speed = 1f; 
-                   //Empieza a perseguir
-                   if (distanciaConPlayer > entradaZonaPersecucion) comportamiento = tipoComportamientoEnemigo.persecucion;
-                   break;
-
-               case tipoComportamientoEnemigo.persecucion:
-                   //Deplazarce caminando
-                   rb2d.velocity = new Vector2(velocidad * 1.1f , rb2d.velocity.y);
-                   //Gira el sprite para c
-                   if (player.position.x > transform.position.x)
-                   {
-                       sprite.flipX = true;
-                       direccion = 1;
-                   }
-                   if (player.position.x < transform.position.x)
-                   {
-                       sprite.flipX = false;
-                       direccion = -1;
-                   }
-                   //Velocidad de animacion
-                   anim.speed = 1.1f;
-                   //volver a pasivo NO VUELVE A PASIVO (tampoco es que altere al gameplay planeado que no lo haga)
-                   if (distanciaConPlayer > salidaZonaPersecucion) comportamiento = tipoComportamientoEnemigo.pasivo;
+                //ataca
+                if (distanciaConPlayer < distanciaAtaque) comportamiento = tipoComportamientoEnemigo.ataque;
                    break;
 
                case tipoComportamientoEnemigo.ataque:
-
-                   break;
+                anim.SetTrigger("Ataque");
+                if (player.position.x > transform.position.x)
+                {
+                    sprite.flipX = true;
+                    direccion = 1;
+                }
+                if (player.position.x < transform.position.x)
+                {
+                    sprite.flipX = false;
+                    direccion = -1;
+                }
+                //APasivo
+                if (distanciaConPlayer > distanciaAtaque) comportamiento = tipoComportamientoEnemigo.pasivo;
+                break;
            }
-           */
+           
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -106,6 +93,13 @@ public class EnemigoController : MonoBehaviour
         particulasDeDaño.Play();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && comportamiento == tipoComportamientoEnemigo.ataque)
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 
 
 }

@@ -221,7 +221,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 3.1639357}
+  m_Offset: {x: 0.38674355, y: 3.4894364}
   m_SpriteTilingProperty:
     border: {x: 0, y: 6.0506473, z: 0, w: 4.3004603}
     pivot: {x: 0.19395864, y: 0.65692663}
@@ -232,7 +232,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 11.962893, y: 6.428013}
+  m_Size: {x: 8.928434, y: 3.409737}
   m_EdgeRadius: 0
 --- !u!50 &6180784162979755001
 Rigidbody2D:
@@ -275,7 +275,7 @@ MonoBehaviour:
   distanciaConPlayer: 0
   player: {fileID: 0}
   vida: 0
-  "particulasDeDa\xF1o": {fileID: 0}
+  "particulasDeDa\xF1o": {fileID: 2891131068525476947}
 --- !u!58 &7609395841131036357
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -289,9 +289,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -5, y: 2.24}
+  m_Offset: {x: 0.3299994, y: 2.8620653}
   serializedVersion: 2
-  m_Radius: 14.16
+  m_Radius: 9.253104
 --- !u!1 &113169841939202593
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,12 +742,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2641192609200350311, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+      propertyPath: ShapeModule.m_Position.x
+      value: 0.27910042
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641192609200350311, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+      propertyPath: ShapeModule.m_Position.y
+      value: 4.914919
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641192609200350311, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+      propertyPath: ShapeModule.m_Position.z
+      value: 1.8157489
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641192609200350311, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+      propertyPath: ShapeModule.m_Rotation.x
+      value: 0.0021539633
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641192609200350311, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+      propertyPath: ShapeModule.m_Rotation.z
+      value: -0.00001945513
+      objectReference: {fileID: 0}
     - target: {fileID: 2641192609200350329, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+--- !u!198 &2891131068525476947 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2641192609200350311, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
+  m_PrefabInstance: {fileID: 916547174773839924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2891131068525476946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2641192609200350310, guid: ebcc814a9bb62f045983c012fa7e693d, type: 3}
