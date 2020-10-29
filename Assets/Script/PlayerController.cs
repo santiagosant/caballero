@@ -14,7 +14,9 @@ public class PlayerController : MonoBehaviour
     bool ataque;
     BoxCollider2D ataqueCollider;
     float tiempo;
-
+    int vidaActlual = 5;
+    int vidaMax = 5;
+    public ParticleSystem respuestaAtaque;
 
     void Start()
     {
@@ -83,4 +85,11 @@ public class PlayerController : MonoBehaviour
         if (movX > 0) sprite.transform.localScale = new Vector3(0.3f, 0.3f, 0);
 
     }
+
+    public void RecivirAtaque()
+    {
+        respuestaAtaque.Play();
+        vidaActlual--;
+    }
+
 }

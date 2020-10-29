@@ -21,6 +21,8 @@ public class EnemigoController : MonoBehaviour
 
     SpriteRenderer sprite;
     public ParticleSystem particulasDeDaño;
+
+    bool ataqueValido = false;
     
 
     // Start is called before the first frame update
@@ -93,13 +95,15 @@ public class EnemigoController : MonoBehaviour
         particulasDeDaño.Play();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && comportamiento == tipoComportamientoEnemigo.ataque)
+        if (collision.gameObject.CompareTag("Player") && ataqueValido)
         {
-            Destroy(collision.gameObject);
+            ataqueValido = false;
+            player.GetComponent<PlayerController>().RecivirAtaque();
         }
     }
 
-
+    public void AtaqueValido() { ataqueValido = true; }
+    public void AtaqueInvalido() { ataqueValido = false; }
 }
