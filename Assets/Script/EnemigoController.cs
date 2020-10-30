@@ -35,7 +35,7 @@ public class EnemigoController : MonoBehaviour
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
         //porque hice el sprite mirando a la izquierda
-        sprite.flipX = true;
+        sprite.transform.localScale = new Vector3(-0.297f, 0.2991769f, 1);
         vida = 3;
     }
 
@@ -45,21 +45,21 @@ public class EnemigoController : MonoBehaviour
 
         distanciaConPlayer = Mathf.Abs(player.position.x - transform.position.x);
 
+           //Deplazarce caminando
+           rb2d.velocity = new Vector2(velocidad * direccion, rb2d.velocity.y);
 
            switch (comportamiento)
            {
                case tipoComportamientoEnemigo.pasivo:
-                   //Deplazarce caminando
-                   rb2d.velocity = new Vector2(velocidad * direccion, rb2d.velocity.y);
                    //Gira el sprite para c
                    if (transform.position.x < limiteCaminataIzq)
                    {
-                       sprite.flipX = true;
-                       direccion = 1;
+                        sprite.transform.localScale = new Vector3(-0.297f, 0.2991769f, 1);
+                        direccion = 1;
                    }
                    if (transform.position.x > limiteCaminataDer)
                    {
-                       sprite.flipX = false;
+                       sprite.transform.localScale = new Vector3(0.297f, 0.2991769f, 1);
                        direccion = -1;
                    }
                 //ataca
@@ -70,12 +70,12 @@ public class EnemigoController : MonoBehaviour
                 anim.SetTrigger("Ataque");
                 if (player.position.x > transform.position.x)
                 {
-                    sprite.flipX = true;
+                    sprite.transform.localScale = new Vector3(-0.297f, 0.2991769f, 1);
                     direccion = 1;
                 }
                 if (player.position.x < transform.position.x)
                 {
-                    sprite.flipX = false;
+                    sprite.transform.localScale = new Vector3(0.297f, 0.2991769f, 1);
                     direccion = -1;
                 }
                 //APasivo

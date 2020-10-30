@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     int vidaActlual = 5;
     int vidaMax = 5;
     public ParticleSystem respuestaAtaque;
+    public TMPro.TextMeshProUGUI vidaEnPantalla ;
 
     void Start()
     {
@@ -90,6 +91,8 @@ public class PlayerController : MonoBehaviour
     {
         respuestaAtaque.Play();
         vidaActlual--;
+        vidaEnPantalla.text = vidaActlual.ToString();
+        if (vidaActlual == 0) { gameObject.SetActive(false); }
     }
 
 }

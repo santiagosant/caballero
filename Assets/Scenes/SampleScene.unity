@@ -2506,6 +2506,10 @@ PrefabInstance:
       propertyPath: respuestaAtaque
       value: 
       objectReference: {fileID: 52484766}
+    - target: {fileID: 4060679581953331207, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
+      propertyPath: vidaEnPantalla
+      value: 
+      objectReference: {fileID: 997250827}
     - target: {fileID: 4060679581953331256, guid: bff9df2f65169694b8e69d5f5148b3b3, type: 3}
       propertyPath: m_Name
       value: Caballero
@@ -2641,6 +2645,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 113169841791135863, guid: 72505b993c1df014a92d40770d89b269, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 113169841791135863, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.297
+      objectReference: {fileID: 0}
+    - target: {fileID: 113169841791135864, guid: 72505b993c1df014a92d40770d89b269, type: 3}
+      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 113169841791135866, guid: 72505b993c1df014a92d40770d89b269, type: 3}
