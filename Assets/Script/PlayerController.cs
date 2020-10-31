@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     int vidaMax = 5;
     public ParticleSystem respuestaAtaque;
     public TMPro.TextMeshProUGUI vidaEnPantalla ;
+    public GameObject nivelFinalizado;
 
     void Start()
     {
@@ -95,4 +96,9 @@ public class PlayerController : MonoBehaviour
         if (vidaActlual == 0) { gameObject.SetActive(false); }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        nivelFinalizado.SetActive(true);
+        Time.timeScale = 0f;
+    }
 }
