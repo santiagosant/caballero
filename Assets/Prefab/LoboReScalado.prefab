@@ -97,7 +97,7 @@ Transform:
   m_GameObject: {fileID: 113169841791135866}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.63, y: -6.79, z: 0}
-  m_LocalScale: {x: 0.2975816, y: 0.29917693, z: 1}
+  m_LocalScale: {x: 0.297, y: 0.29917693, z: 1}
   m_Children:
   - {fileID: 2891131068525476946}
   - {fileID: 113169841758667734}
@@ -185,8 +185,8 @@ MonoBehaviour:
   - {fileID: 113169842312220142}
   - {fileID: 113169843166885177}
   m_Bounds:
-    m_Center: {x: 1.327054, y: 2.7086399, z: 0}
-    m_Extent: {x: 7.5292025, y: 3.8558652, z: 0}
+    m_Center: {x: 1.3270507, y: 2.7086399, z: 0}
+    m_Extent: {x: 7.529201, y: 3.8558652, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!95 &113169841791135862
@@ -267,10 +267,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914580db223be5c4ba1932ba4cb6f3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 15
+  velocidad: 10
   comportamiento: 0
-  entradaZonaPersecucion: 60
-  salidaZonaPersecucion: 600
   distanciaAtaque: 5
   distanciaConPlayer: 0
   player: {fileID: 0}
