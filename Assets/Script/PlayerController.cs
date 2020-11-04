@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem respuestaAtaque;
     public TMPro.TextMeshProUGUI vidaEnPantalla ;
     public GameObject nivelFinalizado;
+    public GameObject sonidoAtaque;
+    public GameObject sonidoSalto;
 
     void Start()
     {
@@ -43,6 +45,9 @@ public class PlayerController : MonoBehaviour
             //Si el KeyDownW es false siempre que se despegue del piso va a hacer al animacion de caida
             anim.SetBool("KeyDownW", true);
             rb2d.AddForce(new Vector2(0, fuerzaSalto), ForceMode2D.Impulse);
+            //Salto
+            GameObject sonido = Instantiate(sonidoSalto);
+            Destroy(sonido, .5f);
         }
         //Animacion de ataque
         if (Input.GetKeyDown(KeyCode.J))
@@ -50,6 +55,8 @@ public class PlayerController : MonoBehaviour
             anim.SetTrigger("Ataque");
             ataqueCollider.enabled = true;
             tiempo = 3f;
+            GameObject sonido = Instantiate(sonidoAtaque);
+            Destroy(sonido, .5f);
         }
         //Contador para desactivar el trigger del ataque 
         if (tiempo > 0)
