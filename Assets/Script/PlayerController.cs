@@ -105,7 +105,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        nivelFinalizado.SetActive(true);
-        Time.timeScale = 0f;
+        if (collision.gameObject.tag == "Finish")
+        {
+            nivelFinalizado.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
