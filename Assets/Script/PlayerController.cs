@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public GameObject nivelFinalizado;
     public GameObject sonidoAtaque;
     public GameObject sonidoSalto;
+    public GameObject estasMuerto;
 
     void Start()
     {
@@ -72,6 +74,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetTrigger("Bloquear");
         }
+        
     }
 
 
@@ -100,7 +103,12 @@ public class PlayerController : MonoBehaviour
         respuestaAtaque.Play();
         vidaActlual--;
         vidaEnPantalla.text = vidaActlual.ToString();
-        if (vidaActlual == 0) { gameObject.SetActive(false); }
+        if (vidaActlual == 0)
+        {
+            gameObject.SetActive(false);
+            estasMuerto.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
